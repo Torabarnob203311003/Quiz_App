@@ -24,13 +24,30 @@ mainAxisAlignment: MainAxisAlignment.center,
                 ),
         const SizedBox(height:20),
 
-        Option(),
+        Option(
+          onetap: () {},
+          text: 'Option',
+
+        ),
         const SizedBox(height:10),
-        Option(),
+        Option(
+          onetap: () {},
+          text: 'Option',
+
+        ),
         const SizedBox(height:10),
-        Option(),
+        Option(
+          onetap: () {},
+          text: 'Option',
+
+        ),
         const SizedBox(height:10),
-        Option()
+        Option(
+          onetap: () {},
+          text: 'Option',
+
+        )
+
       ],
 
 
