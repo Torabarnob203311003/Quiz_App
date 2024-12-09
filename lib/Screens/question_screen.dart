@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/option.dart';
+
 class QuestionScreen extends StatefulWidget {
   const QuestionScreen({super.key});
 
@@ -22,22 +24,13 @@ mainAxisAlignment: MainAxisAlignment.center,
                 ),
         const SizedBox(height:20),
 
-        Container(
-         // margin: EdgeInsets.symmetric(vertical: 25),
-          padding: EdgeInsets.symmetric(horizontal: 20),
-
-          width: double.infinity,
-          child: ElevatedButton(onPressed:(){},
-            style: ElevatedButton.styleFrom(
-              backgroundColor: const Color.fromARGB(255,44,14,55),
-              foregroundColor: Colors.white,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(15),
-              )
-            ), child: Text('Option'),
-        ),
-
-        )
+        Option(),
+        const SizedBox(height:10),
+        Option(),
+        const SizedBox(height:10),
+        Option(),
+        const SizedBox(height:10),
+        Option()
       ],
 
 
@@ -46,3 +39,5 @@ mainAxisAlignment: MainAxisAlignment.center,
     );
   }
 }
+
+
