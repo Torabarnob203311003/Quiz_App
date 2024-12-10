@@ -1,4 +1,7 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
+import 'package:quiz_app/data/quiz_data.dart';
 
 import '../widgets/option.dart';
 
@@ -10,44 +13,23 @@ class QuestionScreen extends StatefulWidget {
 }
 
 class _QuestionScreenState extends State<QuestionScreen> {
+   var currentIndex =0;
   @override
   Widget build(BuildContext context) {
     return Column(
 mainAxisAlignment: MainAxisAlignment.center,
       children: [
-                const Text("What is Flutter ?",
-                  style: TextStyle(
+                 Text(quizData[currentIndex].question,
+                  style: const TextStyle(
                     color: Colors.white,
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-        const SizedBox(height:20),
+         const SizedBox(height:20),
 
-        Option(
-          onetap: () {},
-          text: 'Option',
 
-        ),
-        const SizedBox(height:10),
-        Option(
-          onetap: () {},
-          text: 'Option',
-
-        ),
-        const SizedBox(height:10),
-        Option(
-          onetap: () {},
-          text: 'Option',
-
-        ),
-        const SizedBox(height:10),
-        Option(
-          onetap: () {},
-          text: 'Option',
-
-        )
-
+        ...quizData[currentIndex].option.map((question) => Option(text: question, onetap: (){}))
       ],
 
 

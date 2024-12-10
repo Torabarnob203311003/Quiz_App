@@ -28,7 +28,7 @@ class StartScreen extends StatelessWidget {
         OutlinedButton.icon
           (onPressed: startQuiz,   //this term name lifting step up;
           icon :const Icon(Icons.arrow_forward),
-          label: Text(
+          label: const Text(
           'Start Quiz',
 
     ),
