@@ -29,7 +29,8 @@ mainAxisAlignment: MainAxisAlignment.center,
          const SizedBox(height:20),
 
 
-        ...quizData[currentIndex].option.map((question) => Option(text: question, onetap: (){}))
+        ...quizData[currentIndex].shuffleOption.map((option) =>
+            Option(text: option, onetap: (){}),),
       ],
 
 

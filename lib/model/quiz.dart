@@ -7,4 +7,15 @@
     required this.option
 
  });
+  //greater
+ get shuffleOption{
+   final shuffleOption = List.of(option);
+   shuffleOption.shuffle();
+   return shuffleOption;
+
+
+
+
+   
+ }
  }

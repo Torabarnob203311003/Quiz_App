@@ -18,6 +18,7 @@ class Option extends StatelessWidget {
       child: ElevatedButton(onPressed:onetap,
 
         style: ElevatedButton.styleFrom(
+        
 
             backgroundColor: const Color.fromARGB(255,44,14,55),
             foregroundColor: Colors.white,
