@@ -6,7 +6,8 @@ import 'package:quiz_app/data/quiz_data.dart';
 import '../widgets/option.dart';
 
 class QuestionScreen extends StatefulWidget {
-  const QuestionScreen({super.key});
+  const QuestionScreen({super.key , required this.onOptionSelected});
+  final void Function(String) onOptionSelected;
 
   @override
   State<QuestionScreen> createState() => _QuestionScreenState();
@@ -14,10 +15,14 @@ class QuestionScreen extends StatefulWidget {
 
 class _QuestionScreenState extends State<QuestionScreen> {
    var currentIndex =0;
-   void _onOptionSelected(){
+   void _onOptionSelected(String answer){
+     widget.onOptionSelected(answer);
+
      currentIndex ++;
      if(currentIndex == quizData.length){
        currentIndex =0;
+
+
      }
 
      setState(() {});
@@ -43,7 +48,10 @@ mainAxisAlignment: MainAxisAlignment.center,
 
 
         ...quizData[currentIndex].shuffleOption.map((option) =>
-            Option(text: option, onetap: _onOptionSelected),),
+            Option(text: option, onetap: (){ 
+              _onOptionSelected(option);
+              
+            }),),
       ],
 
 

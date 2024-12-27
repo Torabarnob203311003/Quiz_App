@@ -12,16 +12,23 @@ class QuizApp extends StatefulWidget {
  
  class _QuizAppState extends State<QuizApp> {
   Widget?  currentScreen;
+    List<String> userAnswers =[];// quiz_App(useranwser) >questionScreen >options(value --> useraw nser.add(value
 
   // sending this parameter to start screen
 
  void switchScreen(){
 
    setState(() {
-     currentScreen = QuestionScreen ();
+     currentScreen = QuestionScreen ( onOptionSelected: _addAnswer,);
      //! changes to question Screen
    });
  }
+  void _addAnswer (String answer){
+
+   userAnswers.add(answer);
+   print('##answer = $userAnswers');
+
+  }
  @override
   void initState() {
    currentScreen =StartScreen(startQuiz: switchScreen);
