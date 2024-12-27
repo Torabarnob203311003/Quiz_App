@@ -19,13 +19,17 @@ class _QuestionScreenState extends State<QuestionScreen> {
     return Column(
 mainAxisAlignment: MainAxisAlignment.center,
       children: [
-                 Text(quizData[currentIndex].question,
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
+                 Container(
+                   width: 350.0,
+                   child: Text(quizData[currentIndex].question,
+                     style: const TextStyle(
+                       color: Colors.white,
+                       fontSize: 24,
+                       fontWeight: FontWeight.bold,
+
+                     ),
+                   ),
+                 ),
          const SizedBox(height:20),
 
 
