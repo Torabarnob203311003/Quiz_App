@@ -14,13 +14,22 @@ class QuestionScreen extends StatefulWidget {
 
 class _QuestionScreenState extends State<QuestionScreen> {
    var currentIndex =0;
+   void _onOptionSelected(){
+     currentIndex ++;
+     if(currentIndex == quizData.length){
+       currentIndex =0;
+     }
+
+     setState(() {});
+
+   }
   @override
   Widget build(BuildContext context) {
     return Column(
 mainAxisAlignment: MainAxisAlignment.center,
       children: [
                  Container(
-                   width: 350.0,
+                   padding: const EdgeInsets.symmetric(horizontal: 20),
                    child: Text(quizData[currentIndex].question,
                      style: const TextStyle(
                        color: Colors.white,
@@ -34,8 +43,9 @@ mainAxisAlignment: MainAxisAlignment.center,
 
 
         ...quizData[currentIndex].shuffleOption.map((option) =>
-            Option(text: option, onetap: (){}),),
+            Option(text: option, onetap: _onOptionSelected),),
       ],
+
 
 
 
