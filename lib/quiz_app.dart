@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/Screens/question_screen.dart';
+import 'package:quiz_app/Screens/widgets/result_screen.dart';
+import 'package:quiz_app/data/quiz_data.dart';
 
 import 'Screens/start_screen.dart';
 
@@ -27,6 +29,13 @@ class QuizApp extends StatefulWidget {
 
    userAnswers.add(answer);
    print('##answer = $userAnswers');
+   if(userAnswers.length == quizData.length){
+
+     currentScreen = ResultScreen(userAnwsers: userAnswers,);
+     setState(() {
+
+     });
+   }
 
   }
  @override
