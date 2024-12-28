@@ -25,13 +25,22 @@ class QuizApp extends StatefulWidget {
      //! changes to question Screen
    });
  }
+
+ void restartQuiz(){
+   userAnswers.clear();
+
+   currentScreen = StartScreen(startQuiz: switchScreen);
+ setState(() {});
+ }
   void _addAnswer (String answer){
 
    userAnswers.add(answer);
    print('##answer = $userAnswers');
    if(userAnswers.length == quizData.length){
 
-     currentScreen = ResultScreen(userAnswers: userAnswers,);
+     currentScreen = ResultScreen(userAnswers: userAnswers,
+     onQuizRestart:restartQuiz ,
+     );
      setState(() {
 
      });

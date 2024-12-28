@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/data/quiz_data.dart';
 class ResultScreen extends StatelessWidget {
-  const ResultScreen({super.key,required this.userAnswers});
+  const ResultScreen({super.key,required this.userAnswers, required this.onQuizRestart});
+
+
+
   final List<String> userAnswers;
+  final void Function() onQuizRestart;
 
   List<Map<String,Object>> getSummary(){
 
@@ -37,7 +41,19 @@ class ResultScreen extends StatelessWidget {
               fontSize: 22,
               fontWeight: FontWeight.bold,
               color: Colors.white,
-            ) ,)
+            ) ,
+          ),
+             const SizedBox(height: 20),
+            OutlinedButton.icon(onPressed: onQuizRestart,
+              icon :const Icon(Icons.restart_alt_rounded),
+              label: const Text('Restart Quiz'),
+              style: OutlinedButton.styleFrom(
+                iconColor: Colors.white,
+                foregroundColor: Colors.white,
+
+              ),
+            )
+          
         ],
       ),
 
