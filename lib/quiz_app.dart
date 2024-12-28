@@ -31,7 +31,7 @@ class QuizApp extends StatefulWidget {
    print('##answer = $userAnswers');
    if(userAnswers.length == quizData.length){
 
-     currentScreen = ResultScreen(userAnwsers: userAnswers,);
+     currentScreen = ResultScreen(userAnswers: userAnswers,);
      setState(() {
 
      });
